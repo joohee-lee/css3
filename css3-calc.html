@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3-calc()</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <style>
+		*{ margin: 0; padding: 0; }
+		.div-calc-1{
+			 background: yellow;
+			 width: calc(100% - 50px);
+		}
+		
+		.div-calc-2{
+			 background: green;
+			 width: calc(100% - 7%);
+		}
+
+		.div-margin{
+			 background: red;
+			 margin: 0 50px;
+		}
+	</style>
+</head>
+<body>
+	<!--
+		calc() 함수는 width, height, margin, padding 값을 사칙연산자를 이용하여 표현
+	-->	
+	<div class="wrap">
+		<div class="div-calc-1">
+			TEST
+		</div>
+		<div class="div-calc-2">
+			TEST
+		</div>
+
+		<div class="div-margin">
+			TEST
+		</div>	
+		
+		<style>
+			.list-calc{ width: 100%; margin: 0 auto; }
+			.list{ list-style: none; }
+			.list:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.list li{ float: left; display:inline; text-align: center; }
+			.list-1[data-column="3"] > li{ width: 33.333%;  text-align: center;}
+			.list-2[data-column="3"] li{ width: calc(100% / 3); }
+
+			.list-3[data-column="7"] li{ width: calc(100% / 7); }
+		</style>
+		<div class="list-calc">
+			<ul class="list list-1" data-column="3">
+				<li> width1</li>
+				<li> width2</li>
+				<li> width3</li>
+			</ul>
+			<ul class="list  list-2" data-column="3">
+				<li> width1</li>
+				<li> width2</li>
+				<li> width3</li>
+			</ul>
+		</div>
+		<div class="list-calc">
+			<ul class="list list-3" data-column="7">
+				<li> width1</li>
+				<li> width2</li>
+				<li> width3</li>
+				<li> width4</li>
+				<li> width5</li>
+				<li> width6</li>
+				<li> width7</li>
+			</ul>
+		</div>	
+	</div>
+</body>
+</html>

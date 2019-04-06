@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3-calc()</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <style>
+		*{ margin: 0; padding: 0; }
+		h1, h2, .ex{ 
+			margin: 0 10px;
+		}
+
+		.ex li:before{
+			content: '-';
+			display: inline-block;
+			margin-right: 10px;
+		}
+
+		.wrapper{
+			margin: 20px auto 40px;
+			font-size: 16px;
+		}
+		.wrapper .inner{
+			height: 500px;
+		}
+		.wrapper:after{
+			content: '';
+			display: block;
+			clear: both;
+		}
+		.col{
+			float: left;
+			-webkit-width: calc(100% / 3);
+			-moz-width: calc(100% / 3);
+			width: calc(100% / 3);
+			height: 100%;
+			padding: 0 10px;
+			box-sizing: border-box;
+		}
+
+		.col:nth-child(1),
+		.col:nth-child(3){ background-color: #ccc; }
+		.col:nth-child(2){ background-color: yellow; }
+	</style>
+</head>
+<body>
+	<!--
+		calc() 함수는 width, height, margin, padding 값을 사칙연산자를 이용하여 표현
+	-->	
+	<h1> css3 - calc()</h1>
+
+	<ul class="ex">
+		<li> width, height, font-size, margin, padding 값의 길이를 계산힐때나 각도, 수치, 변형(transition), sound 재생횟수, 애니매이션 처리시 사용하는 함수.</li>
+		<li> + , - , / , *</li>
+		<li> +, - : 좌,우 공백이 필요, *, / 공백이 필요 없음.</li>
+		<li>연산시, 다른 단위값으로 사용 가능 (ex. clac(100% - 40px))</li>
+		<li>모든 계산은 왼쪽에서 오른쪽으로 진행</li>
+		<li>곱하기, 나누기가 제일 먼저 진행</li>
+		<li>calc()함수 오페라 지원 안함. ie9 미만 지원 안됨</li>
+		<li>caniuse <a href="https://caniuse.com/#search=calc" target="_blank">caniuse - calc()</a></li>
+		<li>css3 - min(), max() 지원하는 브라우져가 거의 없음.</li>
+	</ul>
+	
+	<h2>1. ex. calc(100% / 3) : 3개의 div를 3등분. </h2>
+	<div class="wrapper">
+		<div class="inner">
+			<div class="col">A</div>
+			<div class="col">B</div>
+			<div class="col">C</div>
+		</div>
+	</div>
+
+	<br>
+
+	<h2>2. 전체 너비에서 중간에 40px 만 띄우고 싶을때. </h2>
+	<style>
+		.el1, .el2{
+			float: left;
+			width: calc(50% - 20px);
+		}
+
+		.el1{ background: #ccc; }
+		.el2{ background: #ddd; margin-left: 40px; }
+		
+	</style>
+	<div class="wrapper">
+		<div class="el1">el1</div>
+		<div class="el2">el2</div>
+	</div>
+		
+	<br>
+	
+	<h2>3. 각 요소사이에 글꼴의 4배(4em) 만큼 간격을 두고 싶을때. </h2>
+	<style>
+		.el3, .el4{
+			width:calc(50% - 2em);
+		}
+		.el3{float: left; background: #ccc; }
+		.el4{float: right; background: #ddd; }
+
+	</style>
+	<div class="wrapper">
+		<div class="el3">el3</div>
+		<div class="el4">el4</div>
+	</div>
+
+	<br>
+	<h2>4. 두 요소를 2px 테두리로 둘러사고 싶을때.  </h2>
+	<style>
+		.el5, .el6{
+			width:calc(50% - 2em - 4px);
+			border: 2px solid #000;
+			/* box-sizing: border-box; border 포함 */
+		}
+		.el5{float: left; background: #ccc; }
+		.el6{float: right; background: #ddd; }
+
+	</style>
+	<div class="wrapper">
+		<div class="el5">el5</div>
+		<div class="el6">el6</div>
+	</div>
+
+
+	<h2>5. 복잡한 연산공식을 사용하고 싶을때.  </h2>
+	<style>
+	/*ex. wrapper width => 507px 일 경우*/
+		.el7, .el8{
+			width:calc((50% + 2em)/2 + 14px); /* 156.75 */
+		}
+		.el7{float: left; background: #ccc; }
+		.el8{float: right; background: #ddd; }
+
+	</style>
+	<div class="wrapper">
+		<div class="el7">el7</div>
+		<div class="el8">el8</div>
+	</div>
+
+	<h2>6. 화면에 마진있는 요소 배치하기 </h2>
+	<style>
+		.banner
+		{
+		    width: calc(100% - 80px);
+		    border: solid black 1px;
+		    box-shadow: 1px 2px;
+		    background-color: yellow;
+		    /*padding: 6px;*/
+		    text-align: center;
+		    margin: 0 auto;
+		    box-sizing: border-box;
+		}
+
+		.banner2{
+			position: absolute;
+			left: 40px;
+			width: calc(100% - 80px);
+		    border: solid black 1px;
+		    box-shadow: 1px 2px;
+		    background-color: yellow;
+		    /*padding: 6px;*/
+		    text-align: center;
+		    box-sizing: border-box;
+		}
+
+		.banner3{
+			/*margin: 0 auto;*/ /* calc()를 지원하지 않는 브라우저를 위한 대비책 */
+			position: absolute;
+			left: 5%;
+		    width: 90%;/* calc()를 지원하지 않는 브라우저를 위한 대비책 */
+		    border: solid black 1px;
+		    box-shadow: 1px 2px;
+		    background-color: yellow;
+		    /*padding: 6px;*/
+		    text-align: center;
+		    box-sizing: border-box;
+		}
+	</style>
+	<div class="banner">
+		이건 배너 공간입니다. --1
+	</div>
+	<br>	
+	<div class="banner2">
+		이건 배너 공간입니다. --2
+	</div>
+	<br>	
+	<div class="banner3">
+		이건 배너 공간입니다. --3
+	</div>
+
+<br>
+<br>
+	<h2>7. div의 양쪽 가장자리와 창의 가장자리 사이에 50px 간격을두고 창 전체에 걸쳐 div 생성</h2>
+
+	<style>
+		.div-1{
+			position: absolute;
+			left: 50px;
+			width: calc( 100% - 100px);
+			background-color: #ddd;
+			padding: 10px 0;
+		}
+		.div-1 p{ padding: 0 10px; }
+	</style>
+	<div class="div-1">
+		<p>div-1 화면 </p>
+	</div>
+</body>
+</html>
