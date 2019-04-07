@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3-logo-transition</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <style>
+		*{ margin: 0; padding: 0; }
+        ul li{ list-style-type: none;}
+		
+        .header{width: 100%; height: 50px; border-bottom: 1px solid #ddd; background-color: #fff;}
+        .header-inner{ text-align: center}
+        .h-logo > span{
+            display: inline-block;
+            width: 3.06rem;
+            height: 2.5rem;
+        }
+
+        .h-logo{
+           opacity: 1;
+           
+            transition: 0.5s;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+        }
+        .h-logo > span::before{
+            content:'';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: url(https://cdnm.tworld.co.kr/img/svg/graphic_80px_bi_skt_beta.svg) 0 4px no-repeat;
+            background-size: 100% 100%;
+            text-indent: -999em;
+        }
+
+        .scroll .header{
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-bottom: 0;
+        }
+        .fly .h-logo{
+            opacity: 0;
+            transform: translateY(-50%);
+        }
+
+        /*
+        .menu{
+            width: 100%; height: 53px; box-sizing: border-box;
+        }
+		.menu-inner{
+			border-bottom: 1px solid #ddd;
+            background-color: #fff;
+            z-index: 1;
+		}
+		.menu-inner:after{
+			content: '';
+			display: table;
+			clear: both;
+		}
+		.menu-item{ 
+			float: left;
+			width: 50%;
+			text-align: center;
+			box-sizing: border-box;
+		}
+		.menu-item a{ 
+			position: relative;
+			display: block;
+			padding: 10px 0;
+			color: #000;
+			text-decoration: none; 
+		}
+
+		.menu-item	a:before {
+		    content: '';
+		    display: block;
+		    width: 10%;
+		    height: 3px;
+		    position: absolute;
+		    bottom: 0;
+		    left: 50%;
+		    transform: translateX(-50%);
+		    -webkit-transition: all 1s ease;
+		    -moz-transition: all 1s ease;
+		    -o-transition: all 1s ease;
+		    transition: all 1s ease;
+		    background: #009999;
+		    opacity: 0;
+		}
+		
+        .menu-item a.on:before {
+			width: 100%;
+			-webkit-transition: all .07s ease;
+			-moz-transition: all .07s ease;
+			-o-transition: all .07s ease;
+			transition: all .07s ease;
+			opacity: 1;
+		}
+
+        
+        .fly .menu-inner ul{ width: 60%; margin: 0 auto;}
+		.fly .menu-item a:before {
+			
+		}
+
+        .fly .menu.fixed {
+            position: fixed;
+            left: 0;
+            top:0;
+            height: 0;
+            border-color: transparent;
+        }
+        */
+
+        .blind{
+            visibility: hidden;
+            overflow: hidden;
+            position: absolute;
+            left: 0; top: 0;
+            width: 1px; height: 1px;
+            font-size: 0;
+            clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+        }
+
+        .cp-tab{
+            width: 100%;
+            background-color:transparent;
+        }
+
+        .tab-inner{
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 2.875rem;
+            line-height: 2.875rem;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+            padding: 0 1rem 0 1rem;
+            border-bottom: 1px solid #f2f2f2;
+            -webkit-transition: 0.5s;
+            transition: 0.5s; 
+        }
+
+        .tab-list .tab {
+        float: left;
+        width: 50%;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box; 
+        position: relative;
+        -webkit-transition: top .5s;
+        transition: top .5s;
+        top: 0;
+        }
+
+        .tab-list .tab.on{
+           border-bottom: 2px solid red;
+        }
+
+        .tab-list::after{
+            content:'';
+            display: block;
+            clear: both;
+        }
+
+        .scroll .cp-tab{
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .fly .tab-inner {
+            padding: 0.25rem 3.13rem 0 3.13rem; 
+            border-bottom: 0;
+        }
+
+        .fly .home-tab .tab{
+            top: -0.44rem;
+        }
+
+
+/* home 에서 scroll발생시 */
+/*
+
+.home-tab {
+  width: 100%;
+  height: 2.5rem;
+  background: #fff; }
+
+.home-tab .home-tab-belt {
+  position: relative;
+  z-index: 26;
+  width: 100%;
+  height: 2.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0.25rem 1rem 0 1rem;
+  border-bottom: 1px solid #f2f2f2;
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
+
+.home-tab .home-tab-belt .tab {
+  float: left;
+  width: 50%;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.home-tab .home-tab-belt .tab:nth-of-type(1) {
+  padding-right: 1rem; }
+
+.home-tab .home-tab-belt .tab:nth-of-type(2) {
+  padding-left: 1rem; }
+
+.home-tab .home-tab-belt .tab > div {
+  position: relative;
+  height: 2.19rem;
+  -webkit-transition: .7s;
+  transition: .7s; }
+
+.home-tab .home-tab-belt .tab [class*=icon-home-tab] {
+  position: relative;
+  -webkit-transition: top .5s;
+  transition: top .5s;
+  top: 0; }
+
+.home-tab .home-tab-belt .tab .on + .bar {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid red; }
+
+.home-tab .home-tab-belt.fixed .on + .bar {
+  bottom: -2px; }
+
+
+.fly .header-wrap .h-belt .h-default .h-logo {
+  top: -3.13rem;
+  opacity: 0; }
+
+.fly .header-wrap .h-belt .h-default .h-menu {
+  z-index: 27; }
+
+.fly .header-wrap .h-belt .h-default .h-serarch {
+  z-index: 27; }
+
+.fly .home-tab .home-tab-belt {
+  padding: 0.25rem 3.13rem 0 3.13rem; }
+
+.fly .home-tab .home-tab-belt .tab:nth-of-type(1) {
+  padding-right: 0.5rem; }
+
+.fly .home-tab .home-tab-belt .tab:nth-of-type(2) {
+  padding-left: 0.5rem; }
+
+.fly .home-tab .home-tab-belt .tab > div {
+  display: inline-block; }
+
+.fly .home-tab .home-tab-belt .tab [class*=icon-home-tab] {
+  top: -0.44rem; }
+
+.fly .home-tab .home-tab-belt.fixed {
+  position: fixed;
+  left: 0;
+  top: 0.75rem;
+  height: 0;
+  border-color: transparent; }
+*/
+        
+	</style>
+</head>
+<body class="">
+	<div class="wrap">
+        <div class="header">
+            <div class="header-inner">
+                <h1 class="h-logo"><span class="logo"><em class="blind">home</em></span></h1>
+            </div>
+        </div>
+
+        <!-- contnet -->
+       <!--
+        <div class="header menu">
+            <div class="menu-inner">
+                <ul>
+                    <li class="menu-item"><a href="#" class="on">menu1</a></li>
+                    <li class="menu-item"><a href="#">menu2</a></li>
+                </ul>
+            </div>
+        </div>
+        -->
+        <div class="cp-tab">
+            <div class="tab-inner">
+                <ul class="tab-list">
+                    <li class="tab on">tab1</li>
+                    <li class="tab">tab2</li>
+                </ul>
+            </div>
+        </div>
+        <div style="height:1500px;background:#ccc;"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+    <script>
+       
+       //scroll event
+		$(window).on('scroll', function(){
+			console.log( 'scroll');
+			headerScroll();
+		});
+
+        //body class add
+		var headerScroll = function(){
+			var st = window.scrollY;
+			var $elbody =  $(document.body);
+            var $elMenu = $('.menu');
+
+        	if (scrollY > 0){
+				$elbody.addClass('fly').addClass("scroll");
+          	}else{
+				$elbody.removeClass('fly').removeClass('scroll');
+          	}
+		};
+
+    </script>
+</body>
+</html>
