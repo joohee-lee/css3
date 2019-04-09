@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        var {
+  font-style: normal;
+  font-family: monospace;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding-left: 5px;
+}
+
+td.hoverable {
+  width: 30px;
+}
+
+td.hoverable {
+  background-color: red;
+}
+
+@media (hover: none) {
+  td.hoverable.check,
+  td.hoverable.none {
+    background-color: green !important;
+  }
+}
+
+@media (hover: on-demand) {
+  td.hoverable.check,
+  td.hoverable.ondemand {
+    background-color: green !important;
+  }
+}
+
+@media (hover: hover) {
+  td.hoverable.check,
+  td.hoverable.hover {
+    background-color: green !important;
+  }
+}
+
+@media (-moz-touch-enabled: 1) {
+  td.hoverable.firefox {
+    background-color: green !important;
+  }
+}
+    </style>
+</head>
+<body>
+        <h1><var>@media (hover: *)</var> Test</h1>
+        <p>Boxes will appear red or green depending on current support.</p>
+        <table>
+          <tr>
+            <td class="hoverable check"></td>
+            <th>Supports <var>@media (hover: *)</var></th>
+          </tr>
+          <tr>
+            <td class="hoverable none"></td>
+            <th>Can style for <var>@media (hover: none)</var></th>
+          </tr>
+          <tr>
+            <td class="hoverable ondemand"></td>
+            <th>Can style for <var>@media (hover: on-demand)</var></th>
+          </tr>
+          <tr>
+            <td class="hoverable hover"></td>
+            <th>Can style for <var>@media (hover: hover)</var></th>
+          </tr>
+          <tr>
+            <td class="hoverable firefox"></td>
+            <th>Can style for <var>@media (-moz-touch-enabled: 1)</var></th>
+          </tr>
+        </table>
+</body>
+</html>
