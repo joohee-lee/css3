@@ -44,7 +44,7 @@
 .dwg-popup.no-header .header-wrap{display: none;}
 .dwg-popup.no-btn .dwg-dialog-area{display: none;}
 
-.dwg-popup.color-type-list{background:#f76252 url(img/dg_bg_btm.png) no-repeat right bottom;background-size: auto 11.2rem;}
+.dwg-popup.color-type-list{background:#f76252 /*url(img/dg_bg_btm.png) no-repeat right bottom;background-size: auto 11.2rem;*/}
 .dwg-popup.color-type-a{background-color:#58637f;}
 .dwg-popup.color-type-b{background-color:#3584e3;}
 .dwg-popup.color-type-c{background-color:#57637f;}
@@ -154,7 +154,8 @@
                                 <p class="p-desc" role="text">요금제를<br> 변경하신 이유는<br> 무엇인가요?</p>
                             </h2>
                         </div>
-                        <div class="dwg-type-area">
+                        <div class="dwg-type-area" style="position: relative;
+    z-index: 2;">
                             <h2 class="blind">요금제 변경 이유 목록</h2>
                             <ul class="list">
                                 <li class="item">
@@ -184,6 +185,21 @@
                                 </li>
                                  -->
                             </ul>
+                        </div>
+<style>
+    .dwg-btm-img{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-height: 11.2rem;
+    background: #f76252 url(img/dg_bg_btm.png) no-repeat right bottom;
+    background-size: auto 11.2rem;
+    z-index: 1;
+    width: 100%;
+    }
+</style>                        
+                        <div class="dwg-btm-img">
+                            <!--<img src="img/dg_bg_btm.png" alt="">-->
                         </div>
                     </div>
                     <!-- 요금제 변경 이유 리스트 -->
