@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>apple-module</title>
+	<style>
+		* { margin:0; padding:0; }
+
+		body{
+            font-size: 16px;
+            font-family: sans-serif;
+            -moz-font-feature-settings: 'kern';
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+        
+  
+        .section-hero{
+            margin-left: auto;
+            margin-right: auto;
+            width: 692px;
+        }
+  
+		.hero-animaiton-container{
+			min-width: 400px;
+			height: 100vh;
+			position: relative;
+			margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center
+		}
+
+		
+		
+        h1{
+            font-size: 64px;
+            line-height: 1.0625;
+            font-weight: 600;
+            letter-spacing: -.009em;
+            font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+        }
+        
+        
+        .hero-headline-container{
+            text-align: center;
+            opacity: 0;
+            -webkit-transform: translateY(60px);
+            transform: translateY(60px);
+         }
+        .hero-copy-container{
+            text-align: center;
+            -webkit-transform: translateY(60px);
+            transform: translateY(60px);
+            opacity: 0;
+            margin-top: 52px;
+            margin-bottom: 0;
+            
+         }
+
+         .section-hero .js-transition-hero-text {
+            will-change: opacity, transform;
+            transition: 3s cubic-bezier(0.075, 0.82, 0.165, 1) opacity, 3s cubic-bezier(0.075, 0.82, 0.165, 1) transform, 3s cubic-bezier(0.075, 0.82, 0.165, 1) -webkit-transform;
+        }
+
+         .section-hero .js-opacity-transform-animation-in {
+            -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+            opacity: 1;
+        }
+
+        .hero-copy-container p{
+            font-size: 21px;
+            line-height: 1.38105;
+            font-weight: 400;
+            letter-spacing: .011em;
+            font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+        }
+        
+	</style>
+</head>
+<body>
+	<section class="section-hero">
+		<div class="hero-animaiton-container-txt">
+            <div class="hero-headline-container js-transition-hero-text"><h1>Lightness strikes again.</h1></div>
+            <div class="hero-copy-container js-transition-hero-text">
+                <p>
+                    The most loved Mac is about to make you fall in love all over again. Available in silver, space gray, and gold, the new thinner and lighter MacBook Air features a brilliant Retina display with True Tone technology, Touch ID, the latest-generation keyboard, and a Force Touch trackpad. The iconic wedge is created from 100 percent recycled aluminum, making it the greenest Mac ever.
+                </p>
+                <p>Watch the MacBook Airproduct film</p>
+                <p>Starting at $1099</p>
+            </div>
+        </div>
+	</section>
+	<script>
+		
+	</script>
+</body>
+</html>
+	
