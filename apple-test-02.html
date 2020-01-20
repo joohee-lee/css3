@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,6 +75,13 @@
             opacity: 1;
         }
 
+        .section-hero .js-animation-in-delay1s {
+            transition-delay: 1s;
+        }
+        .section-hero .js-animation-in-delay2s {
+            transition-delay: 2s;
+        }
+
         .hero-copy-container p{
             font-size: 21px;
             line-height: 1.38105;
@@ -87,8 +95,15 @@
 <body>
 	<section class="section-hero">
 		<div class="hero-animaiton-container-txt">
-            <div class="hero-headline-container js-transition-hero-text"><h1>Lightness strikes again.</h1></div>
-            <div class="hero-copy-container js-transition-hero-text">
+            <div class="hero-headline-container js-transition-hero-text js-ani-text"><h1>Lightness strikes again.</h1></div>
+            <div class="hero-copy-container js-transition-hero-text js-ani-text  js-animation-in-delay1s">
+                <p>
+                    The most loved Mac is about to make you fall in love all over again. Available in silver, space gray, and gold, the new thinner and lighter MacBook Air features a brilliant Retina display with True Tone technology, Touch ID, the latest-generation keyboard, and a Force Touch trackpad. The iconic wedge is created from 100 percent recycled aluminum, making it the greenest Mac ever.
+                </p>
+                <p>Watch the MacBook Airproduct film</p>
+                <p>Starting at $1099</p>
+            </div>
+            <div class="hero-copy-container js-transition-hero-text js-ani-text  js-animation-in-delay2s">
                 <p>
                     The most loved Mac is about to make you fall in love all over again. Available in silver, space gray, and gold, the new thinner and lighter MacBook Air features a brilliant Retina display with True Tone technology, Touch ID, the latest-generation keyboard, and a Force Touch trackpad. The iconic wedge is created from 100 percent recycled aluminum, making it the greenest Mac ever.
                 </p>
@@ -96,10 +111,31 @@
                 <p>Starting at $1099</p>
             </div>
         </div>
-	</section>
-	<script>
-		
-	</script>
+    </section>
+    
+    <script>
+        window.onload = function(){
+            setTimeout(myFunction, 1000);
+         };
+        
+        var myFunction = function(){
+            var aniText  = document.getElementsByClassName("js-ani-text");
+            var aniTextCount = aniText.length;
+
+            console.log( aniTextCount);
+            console.log( aniText[0]);
+            console.log( aniText[1]);
+
+            /*
+            aniText[0].className += " js-opacity-transform-animation-in"
+            aniText[1].className += " js-opacity-transform-animation-in"
+            */
+            for ( var i = 0; i < aniTextCount ; i++ ){
+                aniText[i].className += " js-opacity-transform-animation-in";
+            }
+        }
+        
+    </script>
 </body>
 </html>
 	
