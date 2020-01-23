@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>css3 - perspective</title>
+	<style>	
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.wrap{
+			margin: 10px 20px;
+			
+		}
+		.wrap:after{
+			content:'';
+			display: block;
+			clear: both;
+		}
+
+		.box{
+			float: left;
+			box-sizing: border-box;
+			margin-right: -1px;
+		}
+
+		
+		.box > a{
+		    display: block;
+		    position: relative;
+		    width: 200px;
+		    height: 298px;
+		    border: 1px solid #e6e6e6;
+		    font-size: 16px;
+		    color: #666;
+		    text-align: center;
+		    text-decoration: none;
+		}
+
+		.box a:before, .box a:after { z-index: 1; }
+
+		.box a:before{
+		    content: "";
+		    position: absolute;
+		    left: -1px;
+		    top: -1px;
+		    width: 0;
+		    height: 0;
+		    border-top: 4px solid transparent;
+		    border-right: 4px solid transparent;
+		    z-index: 1;
+		}
+
+		.box a:after{
+		    content: "";
+		    position: absolute;
+		    right: -1px;
+		    bottom: -1px;
+		    width: 0;
+		    height: 0;
+		    border-bottom: 4px solid transparent;
+		    border-left: 4px solid transparent;
+		}
+
+		.box a:hover:before,
+		.box a:focus:before {border-color:#f03015; width:200px; height:296px; transition:width .4s, height .4s .4s;}
+		.box a:hover:after,
+		.box a:focus:after {border-color:#f03015; width:200px; height:296px; transition:width .4s, height .4s .4s;}
+
+
+
+	
+	
+		@keyframes bgBounce { 
+			 0% {background-position:93% 50%;}
+			25% {background-position:93% 55%;}
+			50% {background-position:93% 45%;}
+			75% {background-position:93% 55%;}
+		}
+				
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="box">
+			<a href="#">1</a>	
+		</div>
+		<div class="box">
+			<a href="#">2</a>
+		</div>
+		<div class="box">
+			<a href="#">3</a>
+		</div>
+		<div class="box">
+			<a href="#">4</a>
+		</div>
+	</div>
+</body>
+</html>
