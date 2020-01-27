@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TEST</title>
+	<style>
+		.book {
+	
+			list-style: none;
+			position: relative;
+		}
+
+		.book li {
+			-webkit-perspective:1800px;
+			-moz-perspective: 1800px;
+			perspective: 1800px;
+			position: relative;
+			width: 100%;
+			float: left;
+			z-index: 1;
+		}
+
+		.book li .coverItem 
+		{
+			cursor:url(//image.aladin.co.kr/img/shop/mousecursor2.png), pointer !important;
+			position: absolute;
+			width: 100%;
+			
+			-webkit-transform-style: preserve-3d;
+			-moz-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+			
+			-webkit-transition: -webkit-transform .5s;
+			-moz-transition: -moz-transform .5s;
+			transition: transform .5s;
+		}
+
+		.coverItem .c_front > div,
+		.coverItem .c_back,
+		.coverItem .c_left,
+		.coverItem .c_right {
+			background-color: #f5f5f5;
+		}
+
+		.book li .coverItem.default:hover 
+		{
+			-webkit-transform: rotate3d(0,1,0,-30deg);
+			-moz-transform: rotate3d(0,1,0,-30deg);
+			transform: rotateY(-30deg);
+		}
+
+		.book li .coverItem > div,
+		.book li .c_front > div {
+			display: block;
+			position: absolute;
+		}
+
+		.book li .c_front 
+		{
+			-webkit-transform-origin: 0% 50% 50%;
+			-moz-transform-origin: 0% 50% 50%;
+			transform-origin: 0% 50% 50%;
+			
+			-webkit-transition: -webkit-transform .5s;
+			-moz-transition: -moz-transform .5s;
+			transition: transform .5s;
+			z-index: 10;
+		}
+
+		.book li .c_front > div {
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			backface-visibility: hidden;
+			
+			-webkit-transform-style: preserve-3d;
+			-moz-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+		}
+
+
+		.book li .c_back
+		{
+			box-shadow: -5px 5px 15px rgba(0,0,0,0.3);
+			border-radius: 3px 0 0 3px;
+			z-index: 0;
+		}
+
+
+		.book li .c_front,
+		.book li .c_back,
+		.book li .c_front > div {
+			width: 100%;
+		}
+
+		.book li .c_left 
+		{
+			overflow:hidden;
+			-webkit-transform: rotate3d(0,1,0,-90deg);
+			-moz-transform: rotate3d(0,1,0,-90deg);
+			transform: rotateY(-90deg);
+		}
+
+		.book li .c_right
+		{
+
+			left: 254px;
+		    width: 92px;
+		    height: 734px;
+		    background-color: #f5f5f5;
+		    transform : rotateY(90deg) translate3d(46px,0,200px);
+
+			
+		}
+
+		.book li .coverItem.bk-viewback {
+			-webkit-transform: translate3d(0,0,0px) rotate3d(0,1,0,-180deg);
+			-moz-transform: translate3d(0,0,0px) rotate3d(0,1,0,-180deg);
+			transform: rotateY(-179.9deg);
+		}
+
+		.book li .coverItem.hover {
+			-webkit-transform: rotate3d(0,1,0,-30deg);
+			-moz-transform: rotate3d(0,1,0,-30deg);
+			transform: rotateY(-30deg);
+		}
+
+		.book li .bk-viewback .c_back {
+			z-index: 10;
+		}
+
+		.book .coverItem {
+			background-repeat: no-repeat;
+			background-position: 0px 0px;
+		}
+
+
+
+    @media all and (min-width:100px) {
+        .Ere_prod_Bcoverwrap .leftarrow2 {
+            position: absolute;
+            z-index: 10;
+            opacity:0;
+            width: 25%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            cursor:pointer;
+            -webkit-transition: opacity 1s ease-in-out;
+            -moz-transition: opactiy 1s ease-in-out;
+            -ms-transition: opacity 1s ease-in-out;
+            -o-transition: opacity 1s ease-in-out;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .Ere_prod_Bcoverwrap .leftarrow2 a {
+            top: 45%;
+            left: 10px;
+            position: absolute;
+        }
+
+        .Ere_prod_Bcoverwrap .leftarrow2 img {
+            width: 19px;
+            text-align: left;
+        }
+
+        .Ere_prod_Bcoverwrap .rightarrow2 {
+            position: absolute;
+            z-index: 10;
+            opacity:0;
+            width: 25%;
+            height: 100%;
+            top: 0;
+            left: 75%;
+            cursor:pointer;
+            -webkit-transition: opacity 1s ease-in-out;
+            -moz-transition: opactiy 1s ease-in-out;
+            -ms-transition: opacity 1s ease-in-out;
+            -o-transition: opacity 1s ease-in-out;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .Ere_prod_Bcoverwrap .rightarrow2 a {
+            top: 45%;
+            right: 10px;
+            position: absolute;
+        }
+
+        .Ere_prod_Bcoverwrap .rightarrow2 img {
+            width: 19px;
+            text-align: left;
+        }
+    }
+    @media all and (min-width:1400px) {
+        .Ere_prod_Bcoverwrap .leftarrow2 {
+            position: absolute;
+            z-index: 10;
+            opacity:0;
+            width: 25%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            cursor:pointer;
+            -webkit-transition: opacity 1s ease-in-out;
+            -moz-transition: opactiy 1s ease-in-out;
+            -ms-transition: opacity 1s ease-in-out;
+            -o-transition: opacity 1s ease-in-out;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .Ere_prod_Bcoverwrap .leftarrow2 a {
+            top: 45%;
+            left: 10px;
+            position: absolute;
+        }
+
+        .Ere_prod_Bcoverwrap .leftarrow2 img {
+            width: 19px;
+        }
+
+        .Ere_prod_Bcoverwrap .rightarrow2 {
+            position: absolute;
+            z-index: 10;
+            opacity:0;
+            width: 25%;
+            height: 100%;
+            top: 0;
+            left: 75%;
+            cursor:pointer;
+            -webkit-transition: opacity 1s ease-in-out;
+            -moz-transition: opactiy 1s ease-in-out;
+            -ms-transition: opacity 1s ease-in-out;
+            -o-transition: opacity 1s ease-in-out;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .Ere_prod_Bcoverwrap .rightarrow2 a {
+            top: 45%;
+            right: 10px;
+            position: absolute;
+        }
+
+        .Ere_prod_Bcoverwrap .rightarrow2 img {
+            width: 19px;
+            text-align: left;
+        }
+    }
+
+    .leftarrow2:hover{
+        -webkit-transition: none;
+        -moz-transition: none;
+        -ms-transition: none;
+        -o-transition: none;
+        transition: none;
+        opacity: 1;
+    }
+
+    .rightarrow2:hover{
+        -webkit-transition: none;
+        -moz-transition: none;
+        -ms-transition: none;
+        -o-transition: none;
+        transition: none;
+        opacity: 1;
+    }
+    @media all and (min-width:100px) {
+        .c_right {
+            width: 46px;
+            left: -23px;
+            height: 293px;
+            -webkit-transform: rotate3d(0,1,0,90deg) translate3d(23px,0,200px);
+            -moz-transform: rotate3d(0,1,0,90deg) translate3d(23px,0,200px);
+            transform: rotateY(90deg) translate3d(23px,0,200px);
+        }
+        .c_back {
+            -webkit-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,46px);
+            -moz-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,46px); 
+            transform:rotate3d(0,1,0,-180deg) translate3d(0,0,46px);
+            height: 293px;
+            box-shadow:-20px 40px 15px rgba(0,0,0,0.3);
+        }
+
+        .c_back.stack1 {
+            -webkit-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,47px) !important;
+            -moz-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,47px) !important; 
+            transform:rotate3d(0,1,0,-180deg) translate3d(0,0,47px) !important;
+        }
+
+        .c_back.stack2 {
+            -webkit-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,48px) !important;
+            -moz-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,48px) !important; 
+            transform:rotate3d(0,1,0,-180deg) translate3d(0,0,48px) !important;
+        }
+
+        .c_back.stack3 {
+            -webkit-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,49px) !important;
+            -moz-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,49px) !important; 
+            transform:rotate3d(0,1,0,-180deg) translate3d(0,0,49px) !important;
+        }
+
+        .c_back.stack4 {
+            -webkit-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,50px) !important;
+            -moz-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,50px) !important; 
+            transform:rotate3d(0,1,0,-180deg) translate3d(0,0,50px) !important;
+        }
+
+        .c_back.stack5 {
+            -webkit-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,51px) !important;
+            -moz-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,51px) !important; 
+            transform:rotate3d(0,1,0,-180deg) translate3d(0,0,51px) !important;
+        }
+
+        .c_back.stack6 {
+            -webkit-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,52px) !important;
+            -moz-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,52px) !important; 
+            transform:rotate3d(0,1,0,-180deg) translate3d(0,0,52px) !important;
+        }
+
+        .c_back.stack7 {
+            -webkit-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,53px) !important;
+            -moz-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,53px) !important; 
+            transform:rotate3d(0,1,0,-180deg) translate3d(0,0,53px) !important;
+        }
+
+        .c_back.stack8 {
+            -webkit-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,54px) !important;
+            -moz-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,54px) !important; 
+            transform:rotate3d(0,1,0,-180deg) translate3d(0,0,54px) !important;
+        }
+
+        .c_back.stack9 {
+            -webkit-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,55px) !important;
+            -moz-transform:rotate3d(0,1,0,-180deg) translate3d(0,0,55px) !important; 
+            transform:rotate3d(0,1,0,-180deg) translate3d(0,0,55px) !important;
+        }
+
+        .coverItem.default .c_front {
+            -webkit-transform:translate3d(0,0,0);
+            -moz-transform:translate3d(0,0,0); 
+            transform:translate3d(0,0,0);
+            transition: transform 500ms ease-in-out;
+        }
+        .coverItem.bk-viewback .c_front {
+            -webkit-transform:translate3d(0,0,1px) !important;
+            -moz-transform:translate3d(0,0,1px) !important; 
+            transform:translate3d(0,0,1px) !important;
+            transition: transform 500ms ease-in-out;
+        }
+    }
+    
+
+	</style>
+</head>
+<body>
+	<div class="cover">
+		<ul class="book">
+			<li>
+				<div class="coverItem default">
+					<div class="c_front">
+						<img src="https://image.aladin.co.kr/product/22218/34/cover500/8998120631_1.jpg" alt="">
+					</div>
+					<div class="c_back" style="overflow: hidden;">
+						<img src="https://image.aladin.co.kr/product/22218/34/letslook/8998120631_b.jpg" alt="">
+					</div>
+					<div class="c_right" style="overflow:hidden;background-color:#f5f5f5;"></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>css3 - perspective</title>
+	<style>	
+
+		.wrapper{
+			text-align: center;
+			margin: 20px auto;
+			width: 180px;
+			height: 180px;
+		}
+
+		.box-01{
+			width: 100%;
+			height: 100%;
+			background-color: yellow;
+		}
+
+		.box-02{
+			width: 100%;
+			height: 100%;
+			background-color: yellow;
+			transform: rotateY(10deg);
+			transform-origin: top right;
+		}
+
+		.perspective{
+			display: block;
+			/* 관찰자 시점을 설정 */
+			transform-style: preserve-3d;
+			perspective: 300px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<p>기본박스</p>
+		<div class="box-01">1</div>
+	</div>
+
+	<div class="wrapper">
+		<!-- x축을 회전한 박스 -->
+   		 <p>x축 45도 회전한 박스</p>
+		<div class="box-02">2</div>
+	</div>
+	<!-- 
+		Initial value - none
+		Applies to - Transformable elements
+		Inherited - No
+		Media - Visual
+		Computed value - Absolute length or 'none'.
+		Animatable - As &lt;length&gt;
+		CSS Version - CSS3
+		JavaScript syntax - object.style.perspective
+	-->
+	<!-- 투영점을 반영한 박스 -->
+	<div class="wrapper perspective">
+		<p>x축 45도 회전한 박스에 투영점 설정</p>
+		<div class="box-02">3</div>
+	</div>
+</body>
+</html>
