@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>perspective</title>
+    <style>
+        .div-perspective{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin: 40px;
+            /*perspective property*/
+            perspective: 600px;
+            
+        }
+        .panel-blue{
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+            transform: rotateY(-90deg);
+            transform-origin: top right;
+        }
+    </style>
+</head>
+<body>
+    <div class="div-perspective">
+        <div class="panel-blue">
+
+        </div>
+    </div>
+</body>
+</html>

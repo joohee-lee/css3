@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>perspective</title>
+    <style>
+        .div-perspective{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin: 40px;
+        }
+        
+        .panel{
+           float: left;
+           width: 55px;
+           height: 55px;
+           margin: 5px;
+           background: red;
+           transform: 
+                perspective(400px)
+                rotateY(45deg);
+            transform-origin: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="div-perspective">
+        <div class="panel"></div>
+        <div class="panel"></div>
+        <div class="panel"></div>
+        <div class="panel"></div>
+        <div class="panel"></div>
+        <div class="panel"></div>
+        <div class="panel"></div>
+        <div class="panel"></div>
+        <div class="panel"></div>
+    </div>
+</body>
+</html>
