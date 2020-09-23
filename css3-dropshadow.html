@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Filter example</title>
+    <style>
+      .foo {
+        width: 100px;
+        padding: 50px 0;
+        margin: 100px;
+        text-align: center;
+        border: dashed 10px red;
+        float: left;
+      }
+
+      .bar {
+        box-shadow: 5px 5px 10px black;
+      }
+
+      .baz {
+        filter: drop-shadow(5px 5px 10px black);
+        -webkit-filter: drop-shadow(5px 5px 10px black);
+      }
+
+      body{
+        background: #ccc;
+    }
+    .box{
+        margin: 40px;
+        padding: 50px;
+        background-color: #fff;
+        position: relative;
+        font-size: 24px;
+        width: 40px;
+        transition: all ease .5s;
+    }
+
+    .box100{
+        width: 400px;
+    }
+    .cor{
+        position: absolute;
+        left:-40px; 
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        border: 20px solid transparent;
+        border-right-color:#fff;
+    }
+    .box-shadow{
+        box-shadow:5px 5px 10px black;
+    }
+    .drop-shadow{
+        filter:drop-shadow(5px 5px 10px black);
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="foo bar"></div>
+    <div class="foo baz"></div>
+
+    <div class="box box-shadow">
+        <i class="cor"></i>
+        box-shadow
+    </div>
+    
+    <div class="box drop-shadow">
+        <i class="cor"></i>
+        filter:drop-shadow
+    </div>
+
+  </body>
+</html>
