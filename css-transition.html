@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+
+        .box{ 
+            position: relative;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background: linear-gradient( to right, yellow, red );
+            border: transparent solid red;
+            filter: drop-shadow(4px 4px 3px #4444dd);
+            border-radius: 4px;
+            transition: all ease .5s;
+        }
+
+
+        .box:after{
+            content: '';
+            display: block;
+            /*
+            position: absolute;
+            right: 0;
+            bottom: -4px;
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            padding: 3px;
+            transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  filter: drop-shadow(2px 2px 5px black);
+            */
+            position: absolute;
+            right: -8px;
+            bottom: -6px;
+            transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+            border-left: solid 10px transparent; 
+            border-right: solid 10px transparent; 
+            border-top: solid 10px #fff;
+            /* filter: drop-shadow(0 4px 1px #000); */
+            height: 0; 
+            width: 0; 
+        }
+
+        .box .img{ opacity: 1;}
+        .box .txt{ opacity: 0;}
+
+        .box100{
+            width: 200px; 
+            
+        }
+
+        .box100 .txt{
+            transition-delay: .6s;
+            opacity: 1;
+        }
+        .box100 .img{
+            transition-delay: .5s;
+            opacity: 0;
+        }
+
+        .box img,
+        .box .txt{
+            position: absolute;
+            left: 0;
+            top: 0; 
+        }
+        /*
+        
+      .jbGrad01 {
+        background: linear-gradient( to bottom, yellow, red );
+      }
+      .jbGrad02 {
+        background: linear-gradient( to top, yellow, red );
+      }
+      .jbGrad03 {
+        background: linear-gradient( to right, yellow, red );
+      }
+      .jbGrad04 {
+        background: linear-gradient( to left, yellow, red );
+      }
+      .jbGrad05 {
+        background: linear-gradient( 45deg, yellow, red );
+      }
+
+        */
+    </style>
+</head>
+<body style="margin: 0 50px;">
+    <div class="chat-type">
+        <!-- -->
+        <div class="box">
+            <span class="img"><img src="http://t1.daumcdn.net/daumtop_deco/images/mtop/2018/m640/logo_daum_v2.png" alt="" width="50"></span>
+            <span class="txt">teststetsts</span>
+        </div>
+
+        <!-- close -->
+    </div>
+</body>
+</html>
