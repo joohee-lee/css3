@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chart</title>
+  <link rel="stylesheet" href="reset.css">
+  <style>
+    .graph-container { 
+      position: relative;
+      margin: 10px;
+    }
+    .graph::before{
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color:#ccc;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+ 
+    .graph {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+    } 
+
+    .graph li{
+      position: relative;
+      min-width: 33.333%;
+      width: 100%;
+      height: 200px;
+      display: flex;
+      justify-content:center;
+      
+    }
+
+
+    .graph li .month {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -20px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    
+    .graph .bar-area {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      /*background: #ddd; */
+      bottom: 1px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .graph .bar-area .bar {
+      display: inline-block;
+      margin: 0 auto;
+      width: 20px;
+      background-color: violet;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: height 0.2s ease-in-out;
+    }
+
+    .graph .bar-area .bar-txt {
+      position: absolute;
+      font-size: 11px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="graph-container">
+    <ul class="graph">
+      <li>
+        <span class="month">6월</span>
+        <div class="bar-area">
+          <span class="bar-txt" style="bottom: 20%;">10,000원</span>
+          <span class="bar" style="height: 20%;"></span>
+        </div>
+      </li>
+      <li>
+        <span class="month">7월</span>
+        <div class="bar-area">
+          <span class="bar-txt" style="bottom: 40%;">10,000원</span>
+          <span class="bar" style="height: 40%;"></span>
+        </div>
+      </li>
+      <li>
+        <span class="month">8월</span>
+        <div class="bar-area">
+          <span class="bar-txt"style="bottom: 60%;">10,000원</span>
+          <span class="bar" style="height: 60%;"></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="graph-container">
+    <ul class="graph">
+      <li>
+        <span class="month">6월</span>
+        <div class="bar-area">
+          <span class="bar-txt" style="bottom: 20%;">10,000원</span>
+          <span class="bar" style="height: 20%;"></span>
+        </div>
+      </li>
+      <li>
+        <span class="month">7월</span>
+        <div class="bar-area">
+          <span class="bar-txt" style="bottom: 40%;">10,000원</span>
+          <span class="bar" style="height: 40%;"></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="graph-container">
+    <ul class="graph">
+      <li>
+        <span class="month">6월</span>
+        <div class="bar-area">
+          <span class="bar-txt" style="bottom: 20%;">10,000원</span>
+          <span class="bar" style="height: 20%;"></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
