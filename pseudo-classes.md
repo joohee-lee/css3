@@ -1,5 +1,6 @@
-## css
-Pseudo-classes 가상클래스 
+# css3
+## Pseudo-classes 가상클래스 
+
 - :defined
 - : link
 - :visited
@@ -27,7 +28,7 @@ Pseudo-classes 가상클래스
 - :dir(ltr)
 - :dir(rtl)
 
-- :where() :where() 반복 선택을 줄이자
+- :where() : where() 반복 선택을 줄이자
 - :is() 
 - :has()
 - :not() 
