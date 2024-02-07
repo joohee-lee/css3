@@ -31,4 +31,13 @@
 - :where() : where() 반복 선택을 줄이자
 - :is() 
 - :has()
-- :not() 
+- :not()
+```
+.breadcrumb li:not(:last-child)::after {
+    display: inline-block;
+    margin: 0 0.25rem;
+    content: "→";
+}
+
+```
+
